@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ChattingRoomRepository extends JpaRepository<ChattingRoom, Long> {
-    ChattingRoom findByIdentifier(String identifier);
 }
