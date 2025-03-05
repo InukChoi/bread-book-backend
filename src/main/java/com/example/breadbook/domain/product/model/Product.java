@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Table(name = "product")
 @Entity
 @Getter
 @NoArgsConstructor
@@ -31,11 +32,11 @@ public class Product {
     private Member member;  // 판매자 ID (회원 테이블 참조)
     /* 외래키 */
     @ManyToOne
-    @JoinColumn(name = "book_idx", nullable = false, foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
+    @JoinColumn(name = "book_idx", nullable = false)
     private Book book;  // 판매되는 책 정보
     /* 외래키 */
     @ManyToOne
-    @JoinColumn(name = "category_idx", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
+    @JoinColumn(name = "category_idx")
     private Category category;  // 카테고리 참조
 
     private Long price;  // 가격
